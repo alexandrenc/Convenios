@@ -13,7 +13,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailDescriptionLabel: UIWebView!
 
 
-    var detailItem: NSDictionary? {
+    var detailItem: [String:String]? {
         didSet {
             // Update the view.
             self.configureView()
@@ -24,7 +24,7 @@ class DetailViewController: UIViewController {
         // Update the user interface for the detail item.
         var html:String = "<html><body>"
 
-        if let detail:[String:String] = self.detailItem as? [String:String] {
+        if let detail = self.detailItem {
             
         
             if "" != detail["STRCONVENIO"] {
